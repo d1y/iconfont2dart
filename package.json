@@ -1,0 +1,16 @@
+{
+  "name": "iconfont2dart",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "cli/c2d.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "got": "^11.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.9.1"
+  }
+}
