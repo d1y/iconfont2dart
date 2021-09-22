@@ -61,9 +61,19 @@ if (!isUrl(url)) {
      * @type {Array<string>}
      */
     const values = _once['value'].split('\n')
-    const value = values.find(item=>{
+
+    // fix: if the url is not iconfont.cn/*.css
+    // `value` => null
+    let value = values.find(item=>{
       return item.includes('truetype')
-    }).trim()
+    })
+
+    if (!value) {
+      console.error('parse url not iconfont.cn!!')
+      return
+    }
+    
+    value = value.trim()
     const fontURL = `https:` + value.split(' ')[0].replace('url(\'', '').replace('\')', '')
     const dart = parse({
       css: _css,
